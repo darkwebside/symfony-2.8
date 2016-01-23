@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+{% block content_title %}
+    <h1 class="text-center"> A cash cow?
+        <small class="subtitle">
+            A Cash Cow es un negocio que es la gallina de los huevos de oro
+        </small>
+    </h1>
+{% endblock %}
+{% block body %}
+    <div style="max-width:800px; padding-top:50px; padding-bottom: 25px;" class="container tim-container">
+        <div class="row">
+            <div class="col-md-3">
+                &nbsp;
+            </div>
+            <div class=" col-md-6 col-centered">
+                {% block fos_user_content %}{% endblock %}
+            </div>
+            <div class="col-md-3">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+
+

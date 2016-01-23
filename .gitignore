@@ -4,6 +4,10 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
+#Some sensible Data
+/app/Resources/excel
+!app/Resources/excel/.gitkeep
+
 # Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+{% block title %}Data IO{% endblock %}
+{% block content_title %}
+    <h1 class="text-center"> Como fue la importación?
+        <small class="subtitle">
+            Cruza los dedos
+        </small>
+    </h1>
+{% endblock %}
+
+       {% block body %}
+           <h2>{{ data['Nombre'] }}</h2>
+           <ul>
+
+               <li> Fecha Inicio: {{ data['Fecha Inicio'] | date('d-m-Y, H:i:s') }}</li>
+               <li> Fecha Fin: {{ data['Fecha Fin'] | date('d-m-Y, H:i:s') }}</li>
+               <li> Duración: {{ data['Fecha Inicio']|time_diff }} </li>
+               <li> Nº Errores: {{ data['Número de Errores'] }}</li>
+               <li>Hubo Errores: {{ data['Tiene Errores'] }}</li>
+               <li>Hubo Excepciones:</li>
+           </ul>
+           <p>
+               {% for key, value in data['Tiene Excepciones'] %}
+                   {{ key }} : {{ value }}
+               {% endfor %}
+           </p>
+       {% endblock %}
