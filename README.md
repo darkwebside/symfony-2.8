@@ -1,5 +1,5 @@
-SYMFONY 2.8
-==========
+#SYMFONY 2.8
+
 
 A Symfony project Based on 2.8 version with some components that you will require.
 
