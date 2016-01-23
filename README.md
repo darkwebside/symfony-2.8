@@ -1,9 +1,9 @@
 #SYMFONY 2.8
 
 
-A Symfony project Based on 2.8 version with some components that you will require.
+A Symfony project Based on **2.8.x _Standard Edition_** version with some components that you will require.
 
-As the standard symfony you would have to clone this repository an run 
+As the standard symfony you would have to clone this repository and run 
 ```
 $ composer update
 ```      
