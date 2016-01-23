@@ -20,11 +20,11 @@ As the standard symfony you would have to clone this repository an run
    
 ###Symfony2 PHP CodeSniffer Coding Standard
   
-A coding standard to check against the [Symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html), originally shamelessly copied from the -disappeared- opensky/Symfony2-coding-standard repository.
+   A coding standard to check against the [Symfony coding standards](http://symfony.com/doc/current/contributing/code/standards.html), originally shamelessly copied from the -disappeared- opensky/Symfony2-coding-standard repository.
 
 
-###Symfony Bundles
+##Symfony Bundles
 
-[Friend Of Symfony User Bundle](https://symfony.com/doc/master/bundles/FOSUserBundle/index.html)
+  * [Friend Of Symfony User Bundle](https://symfony.com/doc/master/bundles/FOSUserBundle/index.html)
 
 >Enjoy coding ;)
