@@ -9,7 +9,7 @@
 
   var Radio = function (element, options) {
     this.init(element, options);
-  }
+  };
 
   Radio.prototype = {
   
