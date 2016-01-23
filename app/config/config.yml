@@ -6,11 +6,11 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: es
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -35,6 +35,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    form_themes:
+                        - "form/fields.html.twig"
 
 # Doctrine Configuration
 doctrine:
@@ -65,3 +67,53 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+fos_user:
+    # db_driver other valid values are 'mongodb', 'couchdb' and 'propel'
+    db_driver: orm
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    group:
+         group_class: AppBundle\Entity\Group
+
+
+assetic:
+    debug:          '%kernel.debug%'
+   # use_controller: '%kernel.debug%'
+    use_controller: true
+    filters:
+        cssrewrite: ~
+    assets:
+        # An array of named assets (e.g. some_asset, some_other_asset)
+        uikit_js:
+            inputs:               ['assets/vendor/jquery/dist/jquery.js','assets/vendor/uikit/js/uikit.js']
+            filters:              []
+            options:
+                # A key-value array of options and values
+                some_option_name: []
+        uikit_css:
+            inputs:               ['assets/vendor/uikit/css/uikit.css','assets/vendor/uikit/css/custom.css']
+            filters:              []
+            options:
+                # A key-value array of options and values
+                some_option_name: []
+        gdsk_css:
+            inputs:               ['assets/vendor/gdsk/bootstrap3/css/bootstrap.css','assets/vendor/gdsk/assets/css/get-shit-done.css','assets/vendor/gdsk/assets/css/demo.css','assets/vendor/gdsk/bootstrap3/css/font-awesome.css','assets/vendor/gdsk/assets/css/custom.css']
+            filters:              []
+            options:
+                # A key-value array of options and values
+                some_option_name: []
+
+        gdsk_js:
+                    inputs:               ['assets/vendor/gdsk/jquery/jquery-1.10.2.js','assets/vendor/gdsk/assets/js/jquery-ui-1.10.4.custom.min.js','assets/vendor/gdsk/bootstrap3/js/bootstrap.js','assets/vendor/gdsk/assets/js/gsdk-checkbox.js','assets/vendor/gdsk/assets/js/gsdk-radio.js','assets/vendor/gdsk/assets/js/gsdk-bootstrapswitch.js','assets/vendor/gdsk/assets/js/get-shit-done.js','assets/vendor/gdsk/assets/js/custom.js']
+                    filters:              []
+                    options:
+                        # A key-value array of options and values
+                        some_option_name: []
+
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations

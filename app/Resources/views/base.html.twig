@@ -1,13 +1,77 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>{% block title %}{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
+    {% block stylesheets %}
+        {% stylesheets '@gdsk_css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+{% include 'components/header_container.html.twig' %}
+{% include 'components/nav.html.twig' %}
+
+<div class="main">
+    <div style="max-width:800px; padding-top:50px; padding-bottom: 25px;" class="container tim-container">
+        {% block content_title %}
+        <h1 class="text-center"> A cash cow?
+            <small class="subtitle">
+                A Cash Cow es un negocio que es la gallina de los huevos de oro
+            </small>
+        </h1>
+        {% endblock %}
+
+       {% block body %}{% endblock %}
+    </div>
+</div>
+<div class="space"></div>
+
+{% include 'components/footer.html.twig' %}
+
+{% block javascripts %}
+    {% javascripts '@gdsk_js' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+
+
+<script type="text/javascript">
+
+    $('.btn-tooltip').tooltip();
+    $('.label-tooltip').tooltip();
+    $('.pick-class-label').click(function () {
+        var new_class = $(this).attr('new-class');
+        var old_class = $('#display-buttons').attr('data-class');
+        var display_div = $('#display-buttons');
+        if (display_div.length) {
+            var display_buttons = display_div.find('.btn');
+            display_buttons.removeClass(old_class);
+            display_buttons.addClass(new_class);
+            display_div.attr('data-class', new_class);
+        }
+    });
+    $("#slider-range").slider({
+        range: true,
+        min: 0,
+        max: 500,
+        values: [75, 300]
+    });
+    $("#slider-default").slider({
+        value: 70,
+        orientation: "horizontal",
+        range: "min",
+        animate: true
+    });
+    $('.carousel').carousel({
+        interval: 4000
+    });
+
+
+</script>
+</body>
 </html>
