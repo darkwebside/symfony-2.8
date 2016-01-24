@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% block title %}Deudor{%endblock %}
+{% block content_title %}
+    <h1 class="text-center"> A cash cow?
+        <small class="subtitle">
+            A Cash Cow es un negocio que es la gallina de los huevos de oro
+        </small>
+    </h1>
+{% endblock %}
+{% block body %}
+   <p>{{ deudor.nif }} </p>
+    <p>{{ deudor.nombre }} </p>
+    <p>{{ deudor.deuda }} </p>
+    <p>{{ deudor.fechainclusion | date('d-m-Y, H:i:s')  }} </p>
+
+{% endblock %}
+
