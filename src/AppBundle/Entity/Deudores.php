@@ -61,6 +61,16 @@ class Deudores
     }
 
     /**
+     * Get nif
+     *
+     * @return string
+     */
+    public function getNif()
+    {
+        return $this->nif;
+    }
+
+    /**
      * Set nif
      *
      * @param string $nif
@@ -75,13 +85,13 @@ class Deudores
     }
 
     /**
-     * Get nif
+     * Get nombre
      *
      * @return string
      */
-    public function getNif()
+    public function getNombre()
     {
-        return $this->nif;
+        return $this->nombre;
     }
 
     /**
@@ -99,13 +109,13 @@ class Deudores
     }
 
     /**
-     * Get nombre
+     * Get deuda
      *
      * @return string
      */
-    public function getNombre()
+    public function getDeuda()
     {
-        return $this->nombre;
+        return $this->deuda;
     }
 
     /**
@@ -123,13 +133,13 @@ class Deudores
     }
 
     /**
-     * Get deuda
+     * Get fechaInclusion
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getDeuda()
+    public function getFechaInclusion()
     {
-        return $this->deuda;
+        return $this->fechaInclusion;
     }
 
     /**
@@ -145,15 +155,4 @@ class Deudores
 
         return $this;
     }
-
-    /**
-     * Get fechaInclusion
-     *
-     * @return \DateTime
-     */
-    public function getFechaInclusion()
-    {
-        return $this->fechaInclusion;
-    }
 }
-
